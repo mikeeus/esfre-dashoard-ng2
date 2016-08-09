@@ -6,12 +6,12 @@ import {Header} from './header';
 import {inject, async, TestComponentBuilder, ComponentFixture} from '@angular/core/testing';
 
 describe('header component', () => {
-  it('should render \'Fountain Generator\'', async(inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
+  it('should render \'ESFRE DASHBOARD\'', async(inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
     tcb.createAsync(Header)
       .then((fixture: ComponentFixture<any>) => {
         fixture.detectChanges();
         const header = fixture.nativeElement;
-        expect(header.querySelector('a').textContent.trim()).toBe('Fountain Generator');
+        expect(header.querySelector('a').textContent.trim()).toBe('ESFRE DASHBOARD');
       });
   })));
 });
