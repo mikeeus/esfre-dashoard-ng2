@@ -2,6 +2,8 @@ const gulp = require('gulp');
 const HubRegistry = require('gulp-hub');
 const browserSync = require('browser-sync');
 
+const exec = require('child_process').exec;
+
 const conf = require('./conf/gulp.conf');
 
 // Load some files into the registry
@@ -17,6 +19,12 @@ gulp.task('serve', gulp.series('webpack:watch', 'watch', 'browsersync'));
 gulp.task('serve:dist', gulp.series('default', 'browsersync:dist'));
 gulp.task('default', gulp.series('clean', 'build'));
 gulp.task('watch', watch);
+
+gulp.task('serve:full-stack', gulp.parallel('rails', 'serve'));
+
+gulp.task('rails', function(){
+  exec('rails server');
+});
 
 function reloadBrowserSync(cb) {
   browserSync.reload();
