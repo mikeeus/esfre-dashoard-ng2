@@ -2,7 +2,7 @@
 
 import {Component} from '@angular/core';
 import {ROUTER_DIRECTIVES, RouterConfig} from '@angular/router';
-import {DashboardComponent} from './dashboard/dashboard.component';
+import {FoldersComponent} from './folders/folders.component';
 import {Header} from './app/header';
 import {Footer} from './app/footer';
 
@@ -17,6 +17,6 @@ export class Root {
 export const routes: RouterConfig = [
   {
     path: '',
-    component: DashboardComponent
+    component: FoldersComponent
   }
 ];
