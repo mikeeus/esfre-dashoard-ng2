@@ -6,7 +6,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 
 @Component({
   selector: 'root',
-  template: '<router-outlet></router-outlet>',
+  templateUrl: './root.html',
   directives: [ROUTER_DIRECTIVES]
 })
 export class Root {
