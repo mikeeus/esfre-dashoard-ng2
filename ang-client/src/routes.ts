@@ -3,11 +3,13 @@
 import {Component} from '@angular/core';
 import {ROUTER_DIRECTIVES, RouterConfig} from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {Header} from './app/header';
+import {Footer} from './app/footer';
 
 @Component({
   selector: 'root',
   templateUrl: './root.html',
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES, Footer, Header]
 })
 export class Root {
 }
