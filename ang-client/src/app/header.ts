@@ -7,6 +7,6 @@ import {Auth} from '../auth/auth.service';
   providers: [Auth]
 })
 export class Header {
-  // constructor(private auth: Auth) {}
-  // Authentication: boolean = false;
+  constructor(private auth: Auth) {}
+  Authentication: boolean = true;
 }

@@ -5,6 +5,7 @@ import {ROUTER_DIRECTIVES, RouterConfig} from '@angular/router';
 import {FoldersComponent} from './folders/folders.component';
 import {Header} from './app/header';
 import {Footer} from './app/footer';
+// import {Auth} from './auth/auth.service';
 
 @Component({
   selector: 'root',
