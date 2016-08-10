@@ -1,15 +1,17 @@
 import {Injectable} from '@angular/core';
+import {CanActivate, ActivatedRouteSnapshot, Router, RouterStateSnapshot} 
+  from '@angular/router';
 import {tokenNotExpired} from 'angular2-jwt';
 
 // Avoid name not found warnings
 declare var Auth0Lock: any;
 
 @Injectable()
-export class Auth {
+export class Auth implements CanActivate {
   // configure Auth0
   lock = new Auth0Lock('XTqpxW313fZaABI8jIGBnNiVGRT6SoGU', 
                        'mikeeus.auth0.com', {});
-  constructor() {
+  constructor(private router: Router) {
     // Add callback for lock 'authenticated' event
     this.lock.on('authenticated', (authResult) => {
       localStorage.setItem('id_token', authResult.idToken);
@@ -30,6 +32,16 @@ export class Auth {
   public logout() {
     // remove token from local storage
     localStorage.removeItem('id_token');
+  }
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    if (this.authenticated()) {
+      return true;
+    }
+    
+    // return to home
+    this.router.navigate(['/home']);
+    return false
   }
 
 }
