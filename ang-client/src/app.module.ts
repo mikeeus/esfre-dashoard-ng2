@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {Root} from './routes';
 
 import {AUTH_PROVIDERS} from 'angular2-jwt';
-import {Auth} from './auth/auth.service';
+import {AuthGuard} from './auth/auth-guard.service';
 
 import {FoldersComponent} from './folders/folders.component';
 import {HomeComponent} from './app/home.component';
@@ -17,11 +17,11 @@ if (process.env.NODE_ENV === 'production') {
 
 @NgModule({
   declarations: [FoldersComponent, HomeComponent],
-  providers: [Auth, AUTH_PROVIDERS],
+  providers: [AuthGuard, AUTH_PROVIDERS],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: 'folders', component: FoldersComponent, canActivate: [Auth]},
+      {path: 'folders', component: FoldersComponent, canActivate: [AuthGuard]},
       {path: 'home', component: HomeComponent},
       {path: '', redirectTo: 'folders', pathMatch: 'full'}
       // {path: '**', redirectTo: 'folders', pathMatch: 'full'}
