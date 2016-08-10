@@ -9,7 +9,8 @@ import {Footer} from './app/footer';
 @Component({
   selector: 'root',
   templateUrl: './root.html',
-  directives: [ROUTER_DIRECTIVES, Footer, Header]
+  directives: [ROUTER_DIRECTIVES, Footer, Header],
+  providers: []
 })
 export class Root {
 }

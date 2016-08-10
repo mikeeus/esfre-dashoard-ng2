@@ -10,6 +10,8 @@ import './index.scss';
 
 import {provideRouter} from '@angular/router';
 import {enableProdMode} from '@angular/core';
+import {AUTH_PROVIDERS} from 'angular2-jwt';
+// import Auth0Lock from 'auth0-lock';
 import {routes, Root} from './routes';
 
 declare var process: any;
@@ -18,5 +20,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 bootstrap(Root, [
-  provideRouter(routes)
+  provideRouter(routes),
+  AUTH_PROVIDERS
 ]);

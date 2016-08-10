@@ -1,3 +1,11 @@
 <header class="header">
   <p class="header-title"><a>ESFRE DASHBOARD</a></p>
+
+  <div *ngIf="Authentication">
+    <button class="btn btn-primary btn-margin" (click)="auth.login()"
+      *ngIf="!auth.authenticated()">Log In</button>
+    <button class="btn btn-primary btn-margin" (click)="auth.logout()"
+      *ngIf="auth.authenticated()">Log Out</button>
+  </div>
+
 </header>
