@@ -3,7 +3,7 @@ import {Auth} from '../auth/auth.service';
 
 @Component({
   selector: 'Header',
-  template: require('./header.html'),
+  templateUrl: './app/header.html',
   providers: [Auth]
 })
 export class Header {
