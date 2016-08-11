@@ -10,8 +10,8 @@ import {Sidebar} from './app/sidebar';
 // import {Footer} from './app/footer';
 
 import {AUTH_PROVIDERS} from 'angular2-jwt';
-// import {AuthGuard} from './auth/auth-guard.service';
-// import {Auth} from './auth/auth.service';
+import {AuthGuard} from './auth/auth-guard.service';
+import {Auth} from './auth/auth.service';
 
 import {FoldersComponent} from './folders/folders.component';
 import {HomeComponent} from './app/home.component';
@@ -31,9 +31,9 @@ if (process.env.NODE_ENV === 'production') {
   ],
   providers: [
     // appRoutingProviders,
-    // Auth, 
-    // AuthGuard, 
-    // AUTH_PROVIDERS
+    Auth, 
+    AuthGuard, 
+    AUTH_PROVIDERS
   ],
   imports: [
     BrowserModule,
