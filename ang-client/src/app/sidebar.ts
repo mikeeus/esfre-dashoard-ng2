@@ -7,5 +7,5 @@ import {Component} from '@angular/core';
 })
 export class Sidebar {
   // constructor(private auth: Auth) {}
-  Authentication: boolean = true;
+  Authentication: boolean = false;
 }

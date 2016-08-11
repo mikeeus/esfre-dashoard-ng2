@@ -39,6 +39,7 @@ if (process.env.NODE_ENV === 'production') {
     BrowserModule,
     // routing,
     RouterModule.forRoot([
+      {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'home', component: HomeComponent},
       {path: 'folders', component: FoldersComponent}
     ]),
