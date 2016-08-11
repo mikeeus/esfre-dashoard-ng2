@@ -6,15 +6,15 @@ import {RouterModule} from '@angular/router';
 
 import {FormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
-import {Sidebar} from './app/sidebar';
+import {Sidebar} from '../layout/sidebar';
 // import {Footer} from './app/footer';
 
 import {AUTH_PROVIDERS} from 'angular2-jwt';
-import {AuthGuard} from './auth/auth-guard.service';
-import {Auth} from './auth/auth.service';
+import {AuthGuard} from '../auth/auth-guard.service';
+import {Auth} from '../auth/auth.service';
 
-import {FoldersComponent} from './folders/folders.component';
-import {HomeComponent} from './app/home.component';
+import {FoldersComponent} from '../folders/folders.component';
+import {HomeComponent} from '../home/home.component';
 
 declare var process: any;
 if (process.env.NODE_ENV === 'production') {
